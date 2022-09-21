@@ -102,6 +102,7 @@ app.post("/create", (req, res) => {
 app.get("/edit/:id", (req, res) => {
   const id = req.params.id;
   const sql = "SELECT * FROM Livres WHERE Livre_ID = ?";
+  consolo.log(sql);
   db.get(sql, id, (err, row) => {
     if (err) {
       return console.error(err.message);
@@ -115,6 +116,7 @@ app.post("/edit/:id", (req, res) => {
   const id = req.params.id;
   const book = [req.body.Titre, req.body.Auteur, req.body.Commentaires, id];
   const sql = "UPDATE Livres SET Titre = ?, Auteur = ?, Commentaires = ? WHERE (Livre_ID = ?)";
+  consolo.log(sql);
   db.run(sql, book, err => {
     if (err) {
       return console.error(err.message);
@@ -127,6 +129,7 @@ app.post("/edit/:id", (req, res) => {
 app.get("/delete/:id", (req, res) => {
   const id = req.params.id;
   const sql = "SELECT * FROM Livres WHERE Livre_ID = ?";
+  consolo.log(sql);
   db.get(sql, id, (err, row) => {
     if (err) {
       return console.error(err.message);
@@ -139,6 +142,7 @@ app.get("/delete/:id", (req, res) => {
 app.post("/delete/:id", (req, res) => {
   const id = req.params.id;
   const sql = "DELETE FROM Livres WHERE Livre_ID = ?";
+  consolo.log(sql);
   db.run(sql, id, err => {
     if (err) {
       return console.error(err.message);
