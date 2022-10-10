@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "build":"npm install",
+    "build":"npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,6 +18,6 @@
   },
   "engines": {
     "node": "<=16.17.0",
-    "npm": "~8.5.5"
+    "npm": "~8.15.0"
 }
 }
